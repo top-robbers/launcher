@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "tauri-app",
+  "productName": "Top Robbers Launcher",
   "version": "0.1.0",
   "identifier": "com.top-robbers.launcher",
   "build": {
@@ -12,9 +12,14 @@
   "app": {
     "windows": [
       {
-        "title": "tauri-app",
-        "width": 800,
-        "height": 600
+        "title": "Top Robbers Launcher",
+        "width": 1100,
+        "height": 680,
+        "minWidth": 1040,
+        "minHeight": 640,
+        "resizable": true,
+        "decorations": false,
+        "center": true
       }
     ],
     "security": {
