@@ -1,0 +1,28 @@
+{
+	"appErrorBoundary": {
+		"windowSubtitle": "Erreur launcher",
+		"close": "Fermer",
+		"badge": "Erreur interface",
+		"title": "L'interface a crashé.",
+		"error": "Erreur capturée",
+		"reload": "Relancer l'interface",
+		"copyDetails": "Copier les détails"
+	},
+	"splashscreen": {
+		"loading": "Chargement"
+	},
+	"startup": {
+		"initializing": "Initialisation du launcher...",
+		"checkingUpdates": "Vérification des mises à jour...",
+		"noUpdateAvailable": "Launcher à jour.",
+		"checkingGame": "Vérification de l'installation du jeu...",
+		"connectingServices": "Connexion aux services Top Robbers...",
+		"nativeReady": "Services natifs prêts.",
+		"frontendInitializing": "Initialisation de l'interface...",
+		"restoringSession": "Vérification de la session enregistrée...",
+		"sessionValid": "Session valide.",
+		"sessionUnavailable": "Aucune session active.",
+		"frontendReady": "Interface prête.",
+		"failed": "Le démarrage du launcher a échoué."
+	}
+}

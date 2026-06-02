@@ -1,0 +1,28 @@
+{
+	"appErrorBoundary": {
+		"windowSubtitle": "Launcher error",
+		"close": "Close",
+		"badge": "Interface error",
+		"title": "The interface crashed.",
+		"error": "Captured error",
+		"reload": "Reload interface",
+		"copyDetails": "Copy details"
+	},
+	"splashscreen": {
+		"loading": "Loading"
+	},
+	"startup": {
+		"initializing": "Starting launcher...",
+		"checkingUpdates": "Checking launcher updates...",
+		"noUpdateAvailable": "Launcher is up to date.",
+		"checkingGame": "Checking game installation...",
+		"connectingServices": "Connecting to Top Robbers services...",
+		"nativeReady": "Native services ready.",
+		"frontendInitializing": "Starting interface...",
+		"restoringSession": "Checking saved session...",
+		"sessionValid": "Session restored.",
+		"sessionUnavailable": "No active session.",
+		"frontendReady": "Interface ready.",
+		"failed": "Launcher startup failed."
+	}
+}
