@@ -1,17 +1,17 @@
 [package]
-name = "tauri-app"
+name = "top-robbers"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
-edition = "2021"
+description = "Top Robbers Launcher"
+authors = ["Neeko"]
+license = "GPL-3.0"
+repository = "https://github.com/top-robbers/launcher"
+homepage = "https://github.com/top-robbers/launcher"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
-# The `_lib` suffix may seem redundant but it is necessary
-# to make the lib name unique and wouldn't conflict with the bin name.
-# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
-name = "tauri_app_lib"
+name = "top_robbers_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
@@ -22,4 +22,9 @@ tauri = { version = "2", features = [] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+tokio = { version = "1.52.3", features = ["time"] }
+tauri-plugin-stronghold = "2"
+
+[profile.dev.package.scrypt]
+opt-level = 3
 
