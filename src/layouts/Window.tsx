@@ -1,18 +1,21 @@
 import { Outlet } from 'react-router';
 import { WindowTitleBar } from '../components/WindowTitleBar';
+import { WindowBottomBar } from '../components/WindowBottomBar';
+import { PanelBackground } from '../components/PanelBackground';
 
 export function WindowLayout() {
 	return (
-		<div className="launcher-noise relative h-screen w-screen overflow-hidden bg-[#07070c] text-white rounded-lg">
-			<div className="absolute -left-36 top-20 h-96 w-96 rounded-full bg-[#9083d2]/20 blur-3xl" />
-			<div className="absolute -right-28 bottom-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl" />
+		<div className="relative h-screen w-screen overflow-hidden rounded-lg bg-background text-primary">
+			<PanelBackground variant="default" />
 
 			<div className="relative flex h-full flex-col">
 				<WindowTitleBar />
 
-				<div className="min-h-0 flex-1 p-5">
+				<main className="min-h-0 flex-1 p-5">
 					<Outlet />
-				</div>
+				</main>
+
+				<WindowBottomBar />
 			</div>
 		</div>
 	);

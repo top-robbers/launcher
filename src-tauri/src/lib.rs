@@ -5,11 +5,12 @@ mod logger;
 mod startup;
 
 use std::sync::Mutex;
-use tauri::{async_runtime::spawn, Manager};
+use tauri::{Manager, async_runtime::spawn};
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_dialog::init())
         .manage(Mutex::new(startup::StartupState::default()))
         .setup(|app| {
             println!("[Launcher] Tauri setup started.");
@@ -22,9 +23,8 @@ pub fn run() {
 
             println!("[Launcher] Stronghold salt path: {}", salt_path.display());
 
-            app.handle().plugin(
-                tauri_plugin_stronghold::Builder::with_argon2(&salt_path).build(),
-            )?;
+            app.handle()
+                .plugin(tauri_plugin_stronghold::Builder::with_argon2(&salt_path).build())?;
 
             let app_handle = app.handle().clone();
 

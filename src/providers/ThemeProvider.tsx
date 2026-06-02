@@ -42,13 +42,12 @@ export function ThemeProvider({ children, defaultTheme = 'dark', storageKey = 'd
 		if (flashbangEnabled) {
 			const now = new Date();
 			const currentHour = now.getHours();
-			// Read schedule from localStorage (defaults 20 -> 8)
 			const startHour = Number(localStorage.getItem('deadlock-flashbang-start') ?? '20');
 			const endHour = Number(localStorage.getItem('deadlock-flashbang-end') ?? '8');
 			const inWindow =
 				startHour <= endHour
 					? currentHour >= startHour && currentHour < endHour
-					: currentHour >= startHour || currentHour < endHour; // overnight window
+					: currentHour >= startHour || currentHour < endHour;
 
 			if (inWindow) {
 				root.classList.add('light');
@@ -76,19 +75,17 @@ export function ThemeProvider({ children, defaultTheme = 'dark', storageKey = 'd
 			const now = new Date();
 			const currentHour = now.getHours();
 
-			// Read schedule from localStorage (defaults 20 -> 8)
 			const startHour = Number(localStorage.getItem('deadlock-flashbang-start') ?? '20');
 			const endHour = Number(localStorage.getItem('deadlock-flashbang-end') ?? '8');
 			const inWindow =
 				startHour <= endHour
 					? currentHour >= startHour && currentHour < endHour
-					: currentHour >= startHour || currentHour < endHour; // overnight window
+					: currentHour >= startHour || currentHour < endHour;
 
 			if (inWindow) {
 				root.classList.remove('dark');
 				root.classList.add('light');
 			} else {
-				// Außerhalb der Flashbang-Zeit normale Theme-Logik anwenden
 				root.classList.remove('light', 'dark');
 
 				if (theme === 'system') {
